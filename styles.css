@@ -1,0 +1,31 @@
+#header {
+    text-align: center;
+}
+
+#resbtn {
+    margin-left: 500px;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
+
+#viewbtn {
+    margin-right: 100px;
+    background-color: red;
+    border-style: solid;
+    border-color: black;
+    border-width: 2px;
+}
+
+#tablesleft {
+    text-align: center;
+}
+
+.wrapper {
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    width: 80%;
+    margin-left: 150px;
+    padding: 10px;
+}
