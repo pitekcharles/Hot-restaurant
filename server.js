@@ -8,7 +8,7 @@ app.use(express.urlencoded({ extended: true}));
 app.use(express.json());
 
 var tables = [];
-var reservations = [];
+var waitlist = [];
 
 app.get("/", function(req, res){
     res.sendFile(path.join(__dirname, "index.html"));
@@ -23,11 +23,11 @@ app.get("/reserve", function(req, res){
 });
 
 app.get("/api/tables", function(req, res){
-
+    res.json(tables);
 });
 
 app.get("/api/waitlist", function(req, res){
-
+    res.json(waitlist);
 });
 
 app.listen(PORT, function(){
