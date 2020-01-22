@@ -30,6 +30,26 @@ app.get("/api/waitlist", function(req, res){
     res.json(waitlist);
 });
 
+app.post("/api/tables", function(req, res){
+    var newTable = req.body;
+
+    console.log(newTable);
+
+    tables.push(newTable);
+
+    res.json(newCharacter);
+});
+
+app.post("/api/waitlist", function(req, res){
+    var newWaitlist = req.body;
+
+    console.log(newWaitlist);
+
+    tables.push(newWaitlist);
+
+    res.json(newWaitlist);
+});
+
 app.listen(PORT, function(){
     console.log("App listening on PORT " + PORT);
 });
