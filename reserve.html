@@ -92,9 +92,29 @@
         <input type="password" class="form-control" id="uniqueID">
       </div>
 
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" id="add-btn">Submit</button>
     </form>
   </div>
+  
+  <script type="text/javascript">
+    
+    $("#add-btn").on("click", function(event) {
+      event.preventDefault();
+      var newTable = {
+        name: $("#name").val().trim(),
+        phoneNumber: $("#phoneNumber").val().trim(),
+        email: $("#email").val().trim(),
+        uniqueID: $("#uniqueID").val().trim()
+      };
+
+      
+      $.post("/api/tables", newTable)
+        .then(function(data) {
+          console.log("add.html", data);
+        });
+    });
+  </script>
+
 </body>
 
 </html>
