@@ -36,11 +36,11 @@ app.post("/api/tables", function(req, res){
     console.log(newTable);
 
     if (tables.length > 4){
-        waitlist.post(newTable);
+        waitlist.push(newTable);
     } else {
         tables.push(newTable);
     }
-
+    console.log(`tables: ${tables} \n waitlist: ${waitlist}`);
     res.json(newTable);
 });
 
