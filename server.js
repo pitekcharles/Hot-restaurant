@@ -35,20 +35,24 @@ app.post("/api/tables", function(req, res){
 
     console.log(newTable);
 
-    tables.push(newTable);
+    if (tables.length > 4){
+        waitlist.post(newTable);
+    } else {
+        tables.push(newTable);
+    }
 
-    res.json(newCharacter);
+    res.json(newTable);
 });
 
-app.post("/api/waitlist", function(req, res){
-    var newWaitlist = req.body;
+// app.post("/api/waitlist", function(req, res){
+//     var newWaitlist = req.body;
 
-    console.log(newWaitlist);
+//     console.log(newWaitlist);
 
-    tables.push(newWaitlist);
+//     tables.push(newWaitlist);
 
-    res.json(newWaitlist);
-});
+//     res.json(newWaitlist);
+// });
 
 app.listen(PORT, function(){
     console.log("App listening on PORT " + PORT);
