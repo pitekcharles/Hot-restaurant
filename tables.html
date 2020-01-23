@@ -12,6 +12,8 @@
     <style>
         #header {
             text-align: center;
+            
+
         }
 
         #resbtn {
@@ -60,6 +62,33 @@
             border-color: black;
             border-width: 2px;
         }
+        #currentRes{
+            margin-top: 200px;
+            margin-left: 40px;
+            width: 80%;
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+            padding: 10px;
+        }
+
+        #waitlist {
+            margin-top: 250px;
+            margin-left: 40px;
+            width: 80%;
+            border-style: solid;
+            border-color: black;
+            border-width: 1px;
+            padding: 10px;
+
+        }
+
+        .jumbotron {
+            width: 80%;
+            height: 300px;
+            margin-left: 40px;
+        }
+        
     </style>
 </head>
 
@@ -75,6 +104,31 @@
         <a class="btn btn-primary btn-lg" href="/" role="button" id="viewbtn1">Home</a>
 
     </div>
+        <p id="currentRes">Current Reservations</p>
+
+        <p id="waitlist">Waiting List</p>
+
+        <script type ="text/javascript">
+        $("resbtn1").on("click", function () {
+            var makeReservation = $("#tablesleft").val().trim();
+
+            makeReservation = makeReservation.replace(/\s+/g, "");
+
+            $.get("/tables" + makeReservation, function (data) {
+                console.log(data);
+                if(data){
+
+                } else {
+                    $("").text("There is no more space at the restaurant. Go bug someone else!")
+                }
+
+            });
+        });
+
+        
+
+    </script>
+    
 </body>
 
 </html>
